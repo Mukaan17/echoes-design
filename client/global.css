@@ -1,0 +1,249 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,400&family=DM+Sans:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+   */
+  :root {
+    /* Echoes Color Tokens */
+    --echoes-bg: 20 61% 92%;
+    --echoes-bg-deep: 23 51% 89%;
+    --echoes-cream: 20 67% 96%;
+    --echoes-text: 20 20% 20%;
+    --echoes-text-muted: 20 11% 43%;
+    --echoes-terracotta: 20 59% 53%;
+    --echoes-sage: 137 20% 46%;
+    --echoes-sage-muted: 150 16% 60%;
+    --echoes-gold: 39 56% 54%;
+    --echoes-gold-muted: 39 59% 66%;
+    --echoes-warm: 20 60% 84%;
+    --echoes-border: 20 31% 79%;
+    --echoes-error: 0 60% 55%;
+    --echoes-white: 0 0% 100%;
+
+    /* Emotion Colors */
+    --emotion-joy: 27 62% 67%;
+    --emotion-sadness: 150 14% 55%;
+    --emotion-anxiety: 24 49% 61%;
+    --emotion-anger: 16 38% 56%;
+    --emotion-loneliness: 150 16% 60%;
+    --emotion-gratitude: 39 56% 54%;
+    --emotion-hope: 120 27% 68%;
+    --emotion-overwhelm: 20 28% 58%;
+
+    /* Default theme (can be overridden) */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-echoes-cream text-echoes-text font-dm-sans;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+/* Typography Utilities */
+@layer components {
+  /* Display Styles - Newsreader */
+  .display-app-name {
+    @apply font-newsreader text-[36px] font-light leading-[110%] tracking-[-0.5px];
+  }
+
+  .display-screen-title {
+    @apply font-newsreader text-[26px] font-light leading-[125%];
+  }
+
+  .display-section-title {
+    @apply font-newsreader text-[24px] font-light leading-[125%];
+  }
+
+  .display-sent-title {
+    @apply font-newsreader text-[26px] font-light leading-[120%];
+  }
+
+  /* Body Styles - Newsreader */
+  .body-tagline {
+    @apply font-newsreader text-[15px] italic font-normal leading-[160%] tracking-[0.3px];
+  }
+
+  .body-letter-body {
+    @apply font-newsreader text-[15px] font-normal leading-[175%] tracking-[0.2px];
+  }
+
+  .body-prompt-dynamic {
+    @apply font-newsreader text-[14.5px] italic font-normal leading-[150%];
+  }
+
+  .body-prompt-general {
+    @apply font-newsreader text-[14px] font-normal leading-[150%];
+  }
+
+  .body-walkthrough {
+    @apply font-newsreader text-[15px] font-normal leading-[165%];
+  }
+
+  .body-sent-body {
+    @apply font-newsreader text-[15px] italic font-normal leading-[160%];
+  }
+
+  .body-context-input {
+    @apply font-newsreader text-[14px] font-normal leading-[150%];
+  }
+
+  /* UI Styles - DM Sans */
+  .ui-section-label {
+    @apply font-dm-sans text-[13px] font-medium tracking-[1.5px] uppercase;
+  }
+
+  .ui-button-primary {
+    @apply font-dm-sans text-[15px] font-medium tracking-[0.4px];
+  }
+
+  .ui-button-secondary {
+    @apply font-dm-sans text-[14px] font-medium tracking-[0.3px];
+  }
+
+  .ui-emotion-label {
+    @apply font-dm-sans text-[13.5px] font-medium;
+  }
+
+  .ui-emotion-desc {
+    @apply font-dm-sans text-[10.5px] font-normal;
+  }
+
+  .ui-intensity-label {
+    @apply font-dm-sans text-[13px] font-normal;
+  }
+
+  .ui-question-label {
+    @apply font-dm-sans text-[13px] font-medium;
+  }
+
+  .ui-question-option {
+    @apply font-dm-sans text-[13.5px] font-normal;
+  }
+
+  .ui-subtitle {
+    @apply font-dm-sans text-[13px] font-normal leading-[150%];
+  }
+
+  .ui-meta {
+    @apply font-dm-sans text-[12px] font-normal;
+  }
+
+  .ui-micro {
+    @apply font-dm-sans text-[10px] font-semibold tracking-[1.2px] uppercase;
+  }
+
+  .ui-delivery-label {
+    @apply font-dm-sans text-[12px] font-semibold tracking-[1px] uppercase;
+  }
+
+  .ui-delivery-time {
+    @apply font-newsreader text-[14px] font-normal;
+  }
+}
