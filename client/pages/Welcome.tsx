@@ -43,7 +43,7 @@ export default function Welcome() {
           <div className="mt-[60px]">
             <PillButton
               variant="primary"
-              onClick={() => navigate("/splash")}
+              onClick={() => navigate("/signup")}
             >
               Create account
             </PillButton>
@@ -51,7 +51,7 @@ export default function Welcome() {
 
           {/* Sign In Link */}
           <button
-            onClick={() => navigate("/splash")}
+            onClick={() => navigate("/login")}
             className="mt-4 ui-button-secondary text-echoes-text-muted hover:text-echoes-text transition-colors"
           >
             I already have an account
